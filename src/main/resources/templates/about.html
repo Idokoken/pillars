@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>pillars</title>
+</head>
+<body>
+<!--header section-->
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">
+                <img th:src="@{/images/brand.png}"  alt="pillars brand" width="30" height="30" class="d-inline-block align-text-top">
+                pillars
+            </a>
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/home}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/posts}">All News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/about}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contact}">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/user/register}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/user/login}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--main section-->
+<main>
+    <div class="container about">
+        <h3>About</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur commodi, doloribus eaque exercitationem explicabo, harum iure libero maxime numquam omnis placeat quisquam sed sint sit veniam vero! Dolorem, quidem.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse ex illum totam voluptatibus. Consequuntur dolorum eos explicabo fugiat illo iste, laboriosam mollitia officiis perferendis quia reprehenderit, suscipit totam velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consequatur cupiditate earum inventore modi neque non saepe sequi ut voluptatum. Accusantium doloremque, nobis obcaecati pariatur quod quos sed voluptate voluptatum?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus distinctio dolore id ipsum magni molestiae nemo rerum, sequi? Amet aperiam architecto autem blanditiis commodi dolore ducimus enim, eum eveniet facere iure magni maiores molestiae, nam officiis qui soluta ullam vero vitae voluptate. Error, facilis magnam mollitia quibusdam vel voluptatibus voluptatum!</p>
+    </div>
+</main>
+
+<!--footer section-->
+<!--javascript section-->
+<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/all.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+</body>
+</html>
