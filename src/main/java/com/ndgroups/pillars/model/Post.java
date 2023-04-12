@@ -1,6 +1,10 @@
 package com.ndgroups.pillars.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -15,19 +19,25 @@ public class Post {
     private String description;
     private String author;
     private String imgCoverUrl;
+    private Boolean isFeatured;
+    @CreationTimestamp
     private LocalDateTime postDate;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 
     public Post() {
     }
 
-    public Post(Integer postIdd, String title, String category, String description, String author, String imgCoverUrl, LocalDateTime postDate) {
-        this.postId = postIdd;
+    public Post(String title, String category, String description, String author, String imgCoverUrl,Boolean isFeatured, LocalDateTime postDate, LocalDateTime updatedAt) {
         this.title = title;
         this.category = category;
         this.description = description;
         this.author = author;
         this.imgCoverUrl = imgCoverUrl;
+        this.isFeatured = isFeatured;
         this.postDate = postDate;
+        this.updatedAt = updatedAt;
     }
 
     public Integer getPostId() {
@@ -74,6 +84,14 @@ public class Post {
         this.imgCoverUrl = imgCoverUrl;
     }
 
+    public Boolean getIsFeatured() {
+        return isFeatured;
+    }
+
+    public void setIsFeatured(Boolean isFeatured) {
+        this.isFeatured = isFeatured;
+    }
+
     public LocalDateTime getPostDate() {
         return postDate;
     }
@@ -82,29 +100,11 @@ public class Post {
         this.postDate = postDate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Post post = (Post) o;
-        return Objects.equals(postId, post.postId) && Objects.equals(title, post.title) && Objects.equals(category, post.category) && Objects.equals(description, post.description) && Objects.equals(author, post.author) && Objects.equals(imgCoverUrl, post.imgCoverUrl) && Objects.equals(postDate, post.postDate);
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(postId, title, category, description, author, imgCoverUrl, postDate);
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + postId +
-                ", title='" + title + '\'' +
-                ", category='" + category + '\'' +
-                ", description='" + description + '\'' +
-                ", author='" + author + '\'' +
-                ", imgCoverUrl='" + imgCoverUrl + '\'' +
-                ", postDate=" + postDate +
-                '}';
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

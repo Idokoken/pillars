@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport"
+                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>pillars</title>
+      </head>
+      <body>
+      <header th:fragment="header">
+          <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+              <div class="container-fluid">
+                  <a class="navbar-brand" th:href="@{/}">
+                      <img th:src="@{/images/brand.png}"  alt="pillars brand" width="30" height="30" class="d-inline-block align-text-top">
+                      pillars
+                  </a>
+                  <button
+                          class="navbar-toggler"
+                          type="button"
+                          data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                          aria-controls="navbarTogglerDemo02"
+                          aria-expanded="false"
+                          aria-label="Toggle navigation"
+                  >
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/api/post}">All News</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/api/about}">About</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/api/contact}">Contact</a>
+                          </li>
+                      </ul>
+
+                      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/api/auth/register}">Register</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/api/auth/login}">Login</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+
+
+      </header>
+
+      </body>
+</html>

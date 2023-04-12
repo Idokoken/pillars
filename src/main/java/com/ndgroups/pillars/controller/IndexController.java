@@ -25,4 +25,12 @@ public class IndexController {
     public String getAbout() {
         return  "about";
     }
+
+    @GetMapping("/admin")
+    public  String adminPage(Model model) {
+        return "admin/index";
+    }
 }
+
+
+

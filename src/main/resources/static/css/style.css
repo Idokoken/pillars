@@ -1,11 +1,84 @@
+:root{
+  --primary-color:  rgba(19, 81, 241, 1);
+  --secondary-color: white;
+}
 *{
 box-sizing: border-box;
 }
 
 body{
-font-family: sans-serif;
+font-family: 'Roboto', sans-serif;
+margin: 0;
+padding: 0;
 }
 
 main{
-min-height: 70vh;
+min-height: 50vh;
 }
+/* header section */
+header .bg-dark {
+   background-image: linear-gradient(to right, var(--primary-color),var(--primary-color), rgba(28, 34, 45, 1), var(--primary-color), var(--primary-color)) !important;
+}
+header .bg-dark a.nav-link{
+color: var(--secondary-color) !important;
+}
+
+
+/* footer section */
+footer{
+    background: rgba(0, 0, 0, 1);
+    color: white;
+}
+footer .content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+footer .item{
+    flex: 100%;
+}
+footer .footerItem{
+  margin: 20px;
+}
+footer .footerItem a{
+   text-decoration: none;
+}
+footer .item-brand{
+      margin-right: 20px;
+ }
+footer .footerlogo{
+    display: flex;
+    align-items: center;
+
+}
+footer .footerIcons{
+    display: flex;
+    align-items: center;
+}
+footer .rule{
+    border: 2px solid white;
+}
+footer .copyWright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+footer .icon{
+    margin-right: 20px;
+}
+footer .footerIcons, footer h5, footer .footerlogo{
+    margin: 20px;
+}
+
+/* for medium and large screen */
+@media only screen and (min-width: 768px){
+    footer .content{
+      flex-direction: row;
+    }
+    footer .item{
+        flex: 50%;
+      }
+    footer .item-brand{
+        margin-top: 20px;
+    }
+ }

@@ -3,9 +3,8 @@ package com.ndgroups.pillars;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication 
 public class PillarsApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(PillarsApplication.class, args);
 	}

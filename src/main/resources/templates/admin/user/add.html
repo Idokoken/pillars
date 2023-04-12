@@ -13,15 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="#" th:object="${newMessage}" method="POST" th:action="@{'/home'}">
-        <div class="form-group">
-          <label for="newMessageText">Submit a new message: </label>
-          <input type="text" id="newMessageText" name="newMessageText" th:field="*{text}" placeholder="enter " class="form-control">
-          <input type="submit" class="btn btn-primary mt-2" value="Submit">
-        </div>
-    </form>
-
-    <h1 th:each="msg : ${greetings}" th:text="${msg}" th:unless="${msg.contains('Goodbye')}">Hello, homepage!</h1>
+    <h3>hello admin</h3>
 </div>
 
 <!--javascript section-->
