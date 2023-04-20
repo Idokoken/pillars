@@ -12,9 +12,93 @@
     <title>pillars</title>
 </head>
 <body>
-<div class="container">
-    <h3>hello admin</h3>
-</div>
+<header th:replace="fragments/header :: header">...</header>
+
+<!--main section-->
+<main>
+        <div class="container-fluid py-4 my-0">
+            <div class="container">
+                <h1 class="">Add Post</h1>
+                <form action="#" th:action="@{/api/post/create}" method="post" th:object="${post}">
+                    <div class="form-group mb-3">
+                        <label class="mb-1" for="title">Title</label>
+                        <input
+                                type="text"
+                                th:field="*{title}"
+                                name="title"
+                                id="title"
+                                placeholder="title"
+                                class="form-control"
+                        />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mb-1" for="category">Category</label>
+                        <input
+                                type="text"
+                                name="category"
+                                th:field="*{category}"
+                                id="category"
+                                placeholder="category"
+                                class="form-control"
+                        />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mb-1" for="description">Description</label>
+                        <textarea
+                                class="form-control"
+                                placeholder="description"
+                                name="description"
+                                th:field="*{description}"
+                                id="description"
+                                rows="5"
+                        ></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mb-1" for="author">Author</label>
+                        <input
+                                type="text"
+                                name="author"
+                                th:field="*{author}"
+                                id="author"
+                                placeholder="author"
+                                class="form-control"
+                        />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mb-1" for="imgCoverUrl">Post cover</label>
+                        <input
+                                type="text"
+                                name="imgCoverUrl"
+                                th:field="*{imgCoverUrl}"
+                                id="imgCoverUrl"
+                                placeholder="cover"
+                                class="form-control"
+                        />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mb-1" for="isFeatured">isFeatured</label>
+                        <input
+                                type="text"
+                                name="isFeatured"
+                                th:field="*{isFeatured}"
+                                id="isFeatured"
+                                placeholder="author"
+                                class="form-control"
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-info text-light mt-3">Submit</button>
+                </form>
+                <a th:href="@{/api/admin}" class="btn btn-danger mt-4">Close</a>
+            </div>
+
+        </div>
+
+
+</main>
+
+<!--footer section-->
+<footer th:replace="fragments/footer :: footer">...</footer>
 
 <!--javascript section-->
 <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>

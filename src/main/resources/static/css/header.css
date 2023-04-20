@@ -1,0 +1,35 @@
+/* header section */
+header{
+    background: white;
+}
+header .bg-dark {
+   background-image: linear-gradient(to right, var(--primary-color),var(--primary-color), rgba(28, 34, 45, 1), var(--primary-color), var(--primary-color)) !important;
+   height: 50px;
+}
+header .bg-dark a.nav-link{
+   color: var(--secondary-color) !important;
+}
+header .bg-light{
+
+}
+header .categories{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+    align-items: center;
+}
+header .category{
+
+}
+header .category.active{
+    color: var(--primary-color);
+}
+
+/* for medium screen */
+@media only screen and (min-width: 768px){
+    header .categories{
+        width: 70%;
+        margin: 0 auto;
+    }
+}

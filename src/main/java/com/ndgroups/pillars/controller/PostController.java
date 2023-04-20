@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,13 +20,12 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-
     @GetMapping("/create")
-    public String getCreatePost() {
+    public String getCreatePost(@ModelAttribute("post") Post post) {
         return "admin/post/add";
     }
     @PostMapping("/create")
-    public String createPost(Model model, @RequestBody Post post) {
+    public String createPost(Model model, @ModelAttribute Post post) {
          postService.createPost(post);
          model.addAttribute("message", "post successfully created");
          return "redirect:/api/admin";
@@ -50,12 +50,12 @@ public class PostController {
 
     @GetMapping("/edit/{id}")
     public String getUpdatePostPage(@PathVariable Integer id, Model model) {
-        Optional<Post>post  = postService.getOnePost(id);
-        model.addAttribute("post", post.get());
+        Optional<Post>getPost  = postService.getOnePost(id);
+        model.addAttribute("post", getPost.get());
         return "admin/post/edit";
     }
     @PostMapping("/edit")
-    public String updatePost(@RequestBody Post post, Model model) {
+    public String updatePost(@ModelAttribute  Post post, Model model) {
         postService.updatePost(post);
         model.addAttribute("message", "post updated successfully");
         return "redirect:/api/admin";

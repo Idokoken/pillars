@@ -14,16 +14,32 @@
 <!--header section-->
 <header th:replace="fragments/header :: header">...</header>
 
-
-
 <!--main section-->
-    <main>
-        <div class="container-fluid p-4 home">
-            <h2>Home</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam aperiam architecto autem, consequuntur cumque dicta facilis laborum necessitatibus nisi officia placeat sapiente suscipit temporibus totam! Cumque iure possimus ullam.</p>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid asperiores assumenda autem blanditiis commodi consequatur earum, incidunt iure iusto maxime minima nihil officia officiis quis, saepe ullam ut, voluptatibus.</p>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid aspernatur autem dolor dolores eos, facere in ipsam nam numquam officiis placeat quaerat quisquam temporibus totam vitae voluptatibus? Dolores, ullam!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eligendi enim ex expedita in quod repellendus repudiandae suscipit velit veritatis? Adipisci aperiam doloremque iusto perspiciatis voluptatem. Dolorum in laudantium modi neque nisi quibusdam repudiandae rerum sit voluptate? Eligendi maxime nesciunt possimus reprehenderit. Aut consectetur dicta dolores incidunt magnam maiores molestiae numquam possimus quidem unde. Dolorum id itaque molestias nihil odio?</p>
+    <main class="home">
+        <div class="featured">
+            <div class="img-cover">
+                <img src="/images/dummy.jpg" alt="cover">
+            </div>
+            <div class="title m-4">
+                <h3 class="">Senate President: Kanu is the right man for the job</h3>
+                <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 Hours ago</div>
+            </div>
+         </div>
+        <div class="content p-4">
+        <div class="latest">
+            <div class="heading mt-2 mb-4"><h2>Latest News</h2></div>
+            <div class="items">
+                <div class="news p-4">
+                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
+                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                </div>
+                <div class="news p-4">
+                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
+                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                </div>
+                <div class="more"><a th:href="@{/api/post}" class="btn">more</a></div>
+            </div>
+        </div>
         </div>
     </main>
 
