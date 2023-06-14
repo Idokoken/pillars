@@ -8,5 +8,8 @@ import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Integer> {
-public List<Post> findByCategory(String category);
+    public List<Post> findByCategory(String category);
+    public List<Post> findByTitle(String title);
+//    public List<Post> findByFeatured(Boolean isFeatured);
+
 }

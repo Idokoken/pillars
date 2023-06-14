@@ -15,14 +15,31 @@
 <header th:replace="fragments/header :: header">...</header>
 
 <!--posts section-->
-<main>
-    <h3>All posts page</h3>
-    <div class="container posts">
-        <h3>All posts page</h3>
-        <div class="item container">
-         <p>Lorem ipsum dolor sit.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad animi assumenda aut consectetur corporis distinctio eos, esse facilis fugit ipsum itaque iure laborum molestiae necessitatibus nisi nulla porro possimus quia quisquam quo tempore unde vel voluptatem voluptatum. A autem deleniti, eligendi facere hic id impedit laborum minima praesentium quaerat? Dicta dolore eum explicabo qui. Ab aliquid architecto atque dolore eius enim eos error explicabo harum, hic impedit iure labore libero magni maxime minima obcaecati quod reprehenderit saepe sed soluta sunt suscipit voluptate? Deserunt distinctio dolorum explicabo, facere fuga molestias nostrum numquam perspiciatis placeat qui rem repellendus repudiandae unde vel?</p>
+<main class="allnews">
+    <h3 class="m-4">All News</h3>
+    <div class="content">
+        <div class="items">
+            <div class="news p-4" th:if="${post}" th:each="post : ${posts}">
+                <a href="@{/api/post/{id}(id=${post.postId})}">
+                    <h3 class="" th:text="${post.title}">...</h3>
+                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                </a>
+            </div>
+            <div class="news p-4">
+                <a href="">
+                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
+                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                </a>
+            </div>
+            <div class="news p-4">
+                <a href="">
+                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
+                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                </a>
+            </div>
         </div>
+        <div class="next"><a th:href="@{/api/post}" class="btn">Next</a></div>
+    </div>
     </div>
 </main>
 

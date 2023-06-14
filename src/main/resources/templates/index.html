@@ -21,24 +21,31 @@
                 <img src="/images/dummy.jpg" alt="cover">
             </div>
             <div class="title m-4">
-                <h3 class="">Senate President: Kanu is the right man for the job</h3>
-                <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 Hours ago</div>
+                <a href="">
+                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
+                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 Hours ago</div>
+                </a>
             </div>
          </div>
         <div class="content p-4">
         <div class="latest">
             <div class="heading mt-2 mb-4"><h2>Latest News</h2></div>
             <div class="items">
-                <div class="news p-4">
-                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
-                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                <div class="news p-4" th:if="${post}" th:each="post : ${posts}">
+                    <a href="@{/api/post/{id}(id=${post.postId})}">
+                        <h3 class="" th:text="${post.title}">...</h3>
+                        <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                    </a>
                 </div>
                 <div class="news p-4">
-                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
-                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                    <a href="">
+                        <h3 class="">Senate President: Kanu is the right man for the job</h3>
+                        <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
+                    </a>
                 </div>
-                <div class="more"><a th:href="@{/api/post}" class="btn">more</a></div>
+
             </div>
+            <div class="more"><a th:href="@{/api/post}" class="btn">more</a></div>
         </div>
         </div>
     </main>

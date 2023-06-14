@@ -43,8 +43,9 @@ public class PostController {
         return "singlepost";
     }
     @GetMapping("/search")
-    public String getPostByCategory(@RequestParam(name="category", required = true) String category){
-        postService.findByCategory(category);
+    public String getPostByCategory(Model model, @RequestParam(name="criteria", required = true) String criteria, @RequestParam(name="searchItem", required = true) String searchItem){
+        List<Post> posts = postService.findByCriteria(criteria, searchItem);
+        model.addAttribute("posts", posts);
         return "posts";
     }
 

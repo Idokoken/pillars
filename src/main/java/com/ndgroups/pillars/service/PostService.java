@@ -3,8 +3,11 @@ package com.ndgroups.pillars.service;
 import com.ndgroups.pillars.model.Post;
 import com.ndgroups.pillars.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +26,14 @@ public class PostService {
     public Optional<Post> getOnePost(Integer id) {
         return postRepository.findById(id);
     }
-    public List<Post> findByCategory(String category) {
-        return postRepository.findByCategory(category);
+    public List<Post> findByCriteria(String criteria, String searchItem) {
+        if(criteria == "category") {
+            return postRepository.findByCategory(searchItem);
+        }
+        if(criteria == "title") {
+            return postRepository.findByTitle(searchItem);
+        }
+       return new ArrayList<>();
     }
     public Optional<Post> updatePost(Post post) {
         Optional<Post> optPost = postRepository.findById(post.getPostId());

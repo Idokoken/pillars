@@ -14,11 +14,13 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postId;
+    @Column(unique = true)
     private String title;
     private String category;
     private String description;
     private String author;
     private String imgCoverUrl;
+    @Column(columnDefinition = "boolean default false")
     private Boolean isFeatured;
     @CreationTimestamp
     private LocalDateTime postDate;

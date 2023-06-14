@@ -3,6 +3,10 @@ footer{
     background: rgba(0, 0, 0, 1);
     color: white;
 }
+footer a:hover{
+    color: rgba(219, 26, 165, 0.5);
+    font-weight: 600;
+ }
 footer .content{
     display: flex;
     flex-direction: column;

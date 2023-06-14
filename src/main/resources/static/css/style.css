@@ -9,7 +9,7 @@
 *{
 box-sizing: border-box;
 }
-
+/* general styling */
 body{
 font-family: 'Roboto', sans-serif;
 margin: 0;
@@ -19,13 +19,35 @@ padding: 0;
 main{
 min-height: 50vh;
 }
-
+main a{
+    text-decoration: none;
+    color: inherit;
+}
 main a:hover{
-   color: rgba(219, 26, 165, 1);
+   color: rgba(219, 26, 165, 0.5);
    font-weight: 600;
 }
 
+main .items{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+main .items .news{
+    box-shadow: 5px 5px 5px 5px rgba(219, 224, 240, 1);
+}
+main .items .news h3{
+     font-family: 'Poppins', sans-serif;
+     font-weight: 500;
+}
+main .items .news .time{
+     color: var(--primary-color);
+}
+
 /* for home page */
+.home {
+}
 .home .featured{
     box-shadow: 5px 5px 5px 5px rgba(219, 224, 240, 1);
 }
@@ -56,33 +78,19 @@ main a:hover{
     font-weight: 700;
     font-family: 'Tilt Prism', cursive;
 }
-.home .latest .items{
-    display: grid;
-    grid-template-columns: 100%;
-    gap: 20px;
+
+.home .more{
+    margin: 30px 0;
+    display: flex;
     justify-content: center;
-}
-.home .latest .news{
-    box-shadow: 5px 5px 5px 5px rgba(219, 224, 240, 1);
-}
-.home .latest .news h3{
-     font-family: 'Poppins', sans-serif;
-     font-weight: 500;
-}
-.home .latest .news .time{
-     color: var(--primary-color);
 }
 .home .btn{
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-
-
 }
 
 
 /* for Single Post page */
-.home{
-}
 .singlepost .main .img-cover{
      width: 100%;
      height: 40vh;
@@ -102,6 +110,20 @@ main a:hover{
      text-indent: 30px;
 }
 
+/* all news page */
+.allnews{
+
+}
+.allnews .next{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+.allnews .btn{
+    background: var(--primary-color);
+    color: white;
+}
+
 /* for Privacy policy page */
 .privacyPolicy div{
     border: 2px solid black;
@@ -111,14 +133,16 @@ main a:hover{
 
 /* for medium and large screen */
 @media only screen and (min-width: 768px){
+/*general styling */
+main .items{
+    grid-template-columns: 45% 45%;
+}
 
-/* for home pag */
+/* for home page */
 .home .latest .heading{
     width: 50%;
 }
-.home .latest .items{
-    grid-template-columns: 45% 45%;
-}
+
 
 /* for single Post page */
 .singlepost .main .img-cover{

@@ -1,5 +1,6 @@
 package com.ndgroups.pillars.controller;
 
+import com.ndgroups.pillars.model.Post;
 import com.ndgroups.pillars.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,41 +9,49 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
-@RequestMapping("/api")
+//@RequestMapping("/api")
 public class IndexController {
     @Autowired
     private PostService postService;
 
-    @GetMapping("/contact")
-    public String getContact() {
-        return "contact";
+    @GetMapping
+    public String getHome(Model model){
+        List<Post> posts = postService.getAllPost();
+        model.addAttribute("posts", posts);
+        return "index";
     }
 
-    @PostMapping("/contact")
+    @GetMapping("/api/contact")
+    public String getContact() {
+        return "pages/contact";
+    }
+
+    @PostMapping("/api/contact")
     public String createMessage(Model model) {
         model.addAttribute("greeting", "message sent successfully");
-        return "contact";
+        return "pages/contact";
     }
-
-    @GetMapping("/about")
+    @GetMapping("/api/about")
     public String getAbout() {
-        return  "about";
+        return  "pages/about";
     }
-    @GetMapping("/editorial")
+    @GetMapping("/api/editorial")
     public String getEditorial() {
-        return  "editorial";
+        return  "pages/editorial";
     }
-    @GetMapping("/advert")
+    @GetMapping("/api/advert")
     public String getAdvert() {
-        return  "advert";
+        return  "pages/advert";
     }
-    @GetMapping("/privacy")
+    @GetMapping("/api/privacy")
     public String getPrivacyPolicy() {
-        return  "privacyPolicy";
+        return  "pages/privacyPolicy";
     }
 
-    @GetMapping("/admin")
+    @GetMapping("/api/admin")
     public  String adminPage(Model model) {
         model.addAttribute("posts", postService.getAllPost());
         return "admin/index";
