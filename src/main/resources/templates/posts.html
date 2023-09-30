@@ -20,7 +20,7 @@
     <div class="content">
         <div class="items">
             <div class="news p-4" th:if="${post}" th:each="post : ${posts}">
-                <a href="@{/api/post/{id}(id=${post.postId})}">
+                <a th:href="@{/api/post/{id}(id=${post.postId})}">
                     <h3 class="" th:text="${post.title}">...</h3>
                     <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
                 </a>
@@ -38,7 +38,7 @@
                 </a>
             </div>
         </div>
-        <div class="next"><a th:href="@{/api/post}" class="btn">Next</a></div>
+        <div class="next"><a th:href="@{/post}" class="btn">Next</a></div>
     </div>
     </div>
 </main>

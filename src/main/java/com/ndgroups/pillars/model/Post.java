@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -17,8 +18,11 @@ public class Post {
     @Column(unique = true)
     private String title;
     private String category;
+    @Column(columnDefinition = "longtext")
     private String description;
     private String author;
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
     private String imgCoverUrl;
     @Column(columnDefinition = "boolean default false")
     private Boolean isFeatured;
@@ -31,7 +35,8 @@ public class Post {
     public Post() {
     }
 
-    public Post(String title, String category, String description, String author, String imgCoverUrl,Boolean isFeatured, LocalDateTime postDate, LocalDateTime updatedAt) {
+    public Post(String title, String category, String description, String author, String imgCoverUrl,
+                Boolean isFeatured, LocalDateTime postDate, LocalDateTime updatedAt) {
         this.title = title;
         this.category = category;
         this.description = description;
@@ -40,6 +45,15 @@ public class Post {
         this.isFeatured = isFeatured;
         this.postDate = postDate;
         this.updatedAt = updatedAt;
+    }
+    public Post(String title, String category, String description, String author, String imgCoverUrl,
+                Boolean isFeatured) {
+        this.title = title;
+        this.category = category;
+        this.description = description;
+        this.author = author;
+        this.imgCoverUrl = imgCoverUrl;
+        this.isFeatured = isFeatured;
     }
 
     public Integer getPostId() {

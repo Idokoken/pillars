@@ -10,9 +10,12 @@
    background: white;
 }
 
-
 .register h3{
-    color: var(--primary-color)
+    background: linear-gradient(56.04deg, #000000 21.2%, #2128C6 95.26%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 .register label{
     color: var(--primary-color);
@@ -23,4 +26,8 @@
 .register img{
     border-radius: 50%;
     border: 1px solid black;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.7);
+}
+.register input, .register button{
+    border-radius: 10px;
 }

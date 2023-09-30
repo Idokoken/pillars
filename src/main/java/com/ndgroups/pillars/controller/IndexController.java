@@ -24,37 +24,37 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/api/contact")
+    @GetMapping("/contact")
     public String getContact() {
         return "pages/contact";
     }
 
-    @PostMapping("/api/contact")
+    @PostMapping("/contact")
     public String createMessage(Model model) {
         model.addAttribute("greeting", "message sent successfully");
         return "pages/contact";
     }
-    @GetMapping("/api/about")
+    @GetMapping("/about")
     public String getAbout() {
         return  "pages/about";
     }
-    @GetMapping("/api/editorial")
+    @GetMapping("/editorial")
     public String getEditorial() {
         return  "pages/editorial";
     }
-    @GetMapping("/api/advert")
+    @GetMapping("/advert")
     public String getAdvert() {
         return  "pages/advert";
     }
-    @GetMapping("/api/privacy")
+    @GetMapping("/privacy")
     public String getPrivacyPolicy() {
         return  "pages/privacyPolicy";
     }
 
-    @GetMapping("/api/admin")
+    @GetMapping("/admin/pillars")
     public  String adminPage(Model model) {
         model.addAttribute("posts", postService.getAllPost());
-        return "admin/index";
+        return "admin/adminDashboard";
     }
 }
 

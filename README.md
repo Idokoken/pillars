@@ -1,7 +1,7 @@
 #  Pillars Blog
 
 ## Usage
-This is a blog website where people can read news and articles and login in users with admin privileges can read, create, update and delete any post.
+This is a blog website where people can read news and articles and people with the admin privileges or link can read, create, update and delete any post.
 
 ## Description
 

@@ -19,7 +19,7 @@
     <div class="container-fluid py-4 my-0">
         <div class="container">
             <h1 class="">Edit Post</h1>
-            <form action="#" th:action="@{/api/post/edit}" method="post" th:object="${post}">
+            <form action="#" th:action="@{/post/edit}" method="post" th:object="${post}">
                 <input type="hidden" th:field="*{postId}" />
                 <div class="form-group mb-3">
                     <label class="mb-1" for="title">Title</label>
@@ -90,7 +90,7 @@
                 </div>
                 <button type="submit" class="btn btn-info text-light mt-3">Submit</button>
             </form>
-            <a th:href="@{/api/admin}" class="btn btn-danger mt-4">Close</a>
+            <a th:href="@{/admin/pillars}" class="btn btn-danger mt-4">Close</a>
         </div>
 
     </div>
