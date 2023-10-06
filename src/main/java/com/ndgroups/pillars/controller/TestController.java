@@ -46,11 +46,15 @@ public class TestController {
         return new ResponseEntity<Post>(newPost, HttpStatus.CREATED);
     }
 
-    @PutMapping("/test2")
-    public ResponseEntity<?> updatePost(@RequestBody Post post) {
-        Optional<Post> upPost =  postService.updatePost(post);
+    @PutMapping("/test2/{id}")
+    public ResponseEntity<?> updatePost(@PathVariable Integer id, @RequestParam("file") MultipartFile file, @RequestParam("title") String title,
+                                        @RequestParam("category") String category, @RequestParam("description") String description,
+                                        @RequestParam("author") String author, @RequestParam("isFeatured") Boolean isFeatured) throws IOException {
 
-        return new ResponseEntity<Post>(upPost.get(), HttpStatus.CREATED);
+        Post updatedPost =  postService.updatePost(id, file, title, category, description, author, isFeatured);
+
+        return new ResponseEntity<Post>(updatedPost, HttpStatus.CREATED);
+
     }
 
 

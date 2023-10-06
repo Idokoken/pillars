@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,15 +36,13 @@
                         <h3 class="" th:text="${post.title}">...</h3>
                         <div class="time py-3">
                             <i class="fa-regular fa-clock me-2"></i>
-                            <span th:text="${#temporals.format(post.postDate, 'mm')} + ' minutes '">
-                            </span>ago
+<!--                            <span th:text="${#numbers.formatInteger(-->
+<!--                                 #temporals.format(post.postDate, 'mm')) < 60 ?-->
+<!--                                 #temporals.format(post.postDate, 'mm') + ' minutes ago' :-->
+<!--                                 #temporals.format(post.postDate, 'dd, MMM yyyy hh:mm a')}">-->
+<!--                         </span>-->
+                            <span th:text="${#temporals.format(post.postDate, 'hh:mm a - dd, MMM')}"></span>
                         </div>
-                    </a>
-                </div>
-                <div class="news p-4">
-                    <a href="">
-                        <h3 class="">Senate President: Kanu is the right man for the job</h3>
-                        <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 minutes ago</div>
                     </a>
                 </div>
 

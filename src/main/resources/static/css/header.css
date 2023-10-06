@@ -7,8 +7,9 @@ header a:hover{
     font-weight: 600;
    }
 header .bg-dark {
-   background-image: linear-gradient(to right, var(--primary-color),var(--primary-color), rgba(28, 34, 45, 1), var(--primary-color), var(--primary-color)) !important;
-   height: 50px;
+   background-image: linear-gradient(to right, var(--primary-color),var(--primary-color),
+                      rgba(28, 34, 45, 1), var(--primary-color), var(--primary-color)) !important;
+   min-height: 50px;
 }
 header .bg-dark a.nav-link{
    color: var(--secondary-color) !important;

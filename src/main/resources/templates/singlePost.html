@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,22 +18,42 @@
 <main>
     <div class="container-fluid singlepost">
         <div class="main">
-<!--            <div class="img-cover">-->
-<!--                <img th:src="*{'data:image/jpeg;base64,' + {post.imgCoverUrl}}" alt="cover">-->
-<!--            </div>-->
             <div class="img-cover">
-                <img th:src="@{${post.imgCoverUrl}}" alt="cover">
+                <img th:src="*{'data:image/jpeg;base64,' + {post.imgCoverUrl}}" alt="cover">
             </div>
-            <h3 class="m-4" th:text="${post.title}">title</h3>
-            <div class="time m-3"><i class="fa-thin fa-date me-2"> <span th:text="${#temporals.format(post.postDate, 'dd, MMMM yyyy')}"></span></i></div>
-            <p class="m-4" th:text="${post.description}">desc</p>
-        </div>
-        <div class="related">
-            <h4>Related Post</h4>
-            <div class="">
-                post
+<!--            <div class="img-cover">-->
+<!--                <img th:src="@{${post.imgCoverUrl}}" alt="cover">-->
+<!--            </div>-->
+            <h3 class="m-4 title" th:text="${post.title}">title</h3>
+            <div class="author m-3"> from <h5 class="ms-2" th:text="${post.author}">Author</h5></div>
+            <div class="time m-3">
+                <i class="fa-regular fa-calendar me-2"></i>
+                <span th:text="${#temporals.format(post.postDate, 'dd, MMMM yyyy')}"></span>
+                <span class="mx-2">|</span>
+                <span th:text="${#temporals.format(post.postDate, 'hh:mm a')}"></span>
             </div>
+            <p class="m-4 description" th:text="${post.description}">desc</p>
         </div>
+        <div class="social-link">
+            <a th:href="@{'whatsapp://send?text=' + ${url}}" target="_blank" class="icon">
+                <img th:src="@{/images/whatsapp.png}" alt="whatsapp">
+            </a>
+            <a th:href="@{'https://www.facebook.com/sharer/sharer.php?u=' + ${url}}" target="_blank" class="icon">
+                <img th:src="@{/images/facebook.png}" alt="facebook">
+            </a>
+            <a th:href="@{'https://twitter.com/intent/tweet?url=' + ${url}}" target="_blank" class="icon">
+                <img th:src="@{/images/twitter.png}" alt="twitter">
+            </a>
+            <a th:href="@{'https://www.linkedin.com/shareArticle?url=' + ${url}}" target="_blank" class="icon">
+                <img th:src="@{/images/linkedin.png}" alt="linkedIn">
+            </a>
+        </div>
+<!--        <div class="related">-->
+<!--            <h4>Related Post</h4>-->
+<!--            <div class="">-->
+<!--                post-->
+<!--            </div>-->
+<!--        </div>-->
      </div>
 </main>
 

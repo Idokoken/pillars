@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.sql.Date;
 import java.time.LocalDateTime;
@@ -16,9 +17,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postId;
     @Column(unique = true)
+    @NotEmpty(message="title field should not be empty")
     private String title;
     private String category;
     @Column(columnDefinition = "longtext")
+    @NotEmpty(message="post description should not be empty")
     private String description;
     private String author;
     @Lob

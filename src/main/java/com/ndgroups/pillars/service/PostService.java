@@ -14,6 +14,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.EntityNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
@@ -56,26 +57,49 @@ public class PostService {
         return newPost;
     }
 
+    public Post updatePost(Integer id, MultipartFile file, String title, String category, String description, String author,
+                           Boolean isFeatured) throws IOException {
+        Optional<Post> optPost = postRepository.findById(id);
+        Post existingPost  = optPost.get();
+//                            .orElseThrow(() -> new EntityNotFoundException("entity not found"));
+
+            existingPost.setTitle(title);
+            existingPost.setCategory(category);
+            existingPost.setDescription(description);
+            existingPost.setAuthor(author);
+            existingPost.setIsFeatured(isFeatured);
+
+            if(file != null && !file.isEmpty()) {
+                existingPost.setImgCoverUrl(Base64.getEncoder().encodeToString(file.getBytes()));
+            }
+
+            return postRepository.save(existingPost);
+    }
+
 //    public Post createPost(Post post) {
 //        return postRepository.save(post);
+  //  }
+//public Optional<Post updatePost(Post post) {
+//    Optional<Post> optPost = postRepository.findById(post.getPostId());
+//    if(optPost.isPresent()){
+//
+//
+//        Post existingPost  = optPost.get();
+//
+//        existingPost.setImgCoverUrl(Base64.getEncoder().encodeToString(post.getImgCoverUrl().getBytes()));
+//        existingPost.setTitle(post.getTitle());
+//        existingPost.setCategory(post.getCategory());
+//        existingPost.setDescription(post.getDescription());
+//        existingPost.setAuthor(post.getAuthor());
+//        existingPost.setImgCoverUrl(post.getImgCoverUrl());
+//        existingPost.setIsFeatured(post.getIsFeatured());
+//
+//        postRepository.save(existingPost);
+//
+//        return Optional.of(existingPost);
 //    }
-public Optional<Post> updatePost(Post post) {
-    Optional<Post> optPost = postRepository.findById(post.getPostId());
-    if(optPost.isPresent()){
-        Post existingPost  = optPost.get();
-        existingPost.setTitle(post.getTitle());
-        existingPost.setCategory(post.getCategory());
-        existingPost.setDescription(post.getDescription());
-        existingPost.setAuthor(post.getAuthor());
-        existingPost.setImgCoverUrl(post.getImgCoverUrl());
-        existingPost.setIsFeatured(post.getIsFeatured());
-
-        postRepository.save(existingPost);
-
-        return Optional.of(existingPost);
-    }
-    return Optional.empty();
-}
+//    return Optional.empty();
+//}
 
 
 

@@ -11,7 +11,7 @@ box-sizing: border-box;
 }
 /* general styling */
 body{
-font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
 margin: 0;
 padding: 0;
 }
@@ -77,6 +77,7 @@ main .items .news .time{
     border-radius: 10px;
     font-weight: 700;
     font-family: 'Tilt Prism', cursive;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .home .more{
@@ -109,6 +110,32 @@ main .items .news .time{
      line-height: 2.0;
      text-indent: 30px;
 }
+.singlepost .main .time{
+     color: var(--primary-color);
+}
+.singlepost .main .author{
+    display: flex;
+}
+.singlepost .social-link{
+     display: flex;
+     margin-bottom: 30px;
+}
+.singlepost .social-link a{
+     width: 35px;
+     height: 35px;
+     text-decoration: none;
+     margin-right: 20px;
+}
+.singlepost .social-link a:hover{
+     opacity: 0.5;
+}
+.singlepost .social-link .icon img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 1);
+}
 
 /* all news page */
 .allnews{
@@ -126,8 +153,13 @@ main .items .news .time{
 
 /* for Privacy policy page */
 .privacyPolicy div{
-    border: 2px solid black;
+    border: 2px solid var(--primary-color);
     border-radius: 20px;
+}
+
+/* for add Post and Edit Post page  */
+.addPost input, .addPost textarea, .addPost button{
+    border-radius: 0 30px 30px 0;
 }
 
 
