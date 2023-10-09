@@ -2,6 +2,8 @@
 footer{
     background: rgba(0, 0, 0, 1);
     color: white;
+    padding: 24px;
+    padding-bottom: 0;
 }
 footer a:hover{
     color: rgba(219, 26, 165, 0.5);
@@ -22,6 +24,10 @@ footer .footerItem a{
    text-decoration: none;
    color: inherit;
 }
+footer .footerItem a:hover{
+   color: rgba(219, 26, 165, 0.5);
+   font-weight: 600;
+}
 footer .item-brand{
       margin-right: 20px;
  }
@@ -31,6 +37,7 @@ footer .footerlogo{
 }
 footer .footerIcons{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 footer .rule{
@@ -41,8 +48,14 @@ footer .copyWright {
     justify-content: center;
     align-items: center;
   }
+  footer .copyWright p {
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.6);
+    }
 footer .icon{
     margin-right: 20px;
+    margin-bottom: 10px;
     border: 2px solid white;
     border-radius: 10px;
     padding: 5px;
@@ -93,5 +106,8 @@ footer .brand{
     }
     footer .form-container{
          width: 70%;
+    }
+    footer .footerIcons{
+
     }
  }

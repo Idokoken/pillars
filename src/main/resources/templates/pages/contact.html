@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,30 +16,62 @@
 
 <!--contact section-->
 <main>
-    <div class="contact container">
-        <h1>Contact Us</h1>
-        <form action="#" th:action="@{/contact}" th:Object="${contact}"  method="POST">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="enter name here"/>
+    <div class="contact container-fluid p-4">
+        <h2>Contact Us</h2>
+        <div class="address">
+            <h3>Our Office Locations</h3>
+            <p>Our mission is to provide
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic incidunt
+                molestiae non ullam voluptatibus. Animi atque dolorum et hic in quas quia, quod tempora
+                ut vel Error, et quasi.
+            </p>
+            <div class="locations">
+                <div class="office">
+                    <div class="img-container">
+                        <img th:src="@{/images/abuja.jpg}" alt="office1">
+                    </div>
+                    <h5>Abuja</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic incidunt
+                       molestiae non ullam voluptatibus. Animi atque dolorum et hic in quas quia, quod tempora
+                        ut vel Error, et quasi.
+                     </p>
+                </div>
+                <div class="office">
+                    <div class="img-container">
+                        <img th:src="@{/images/lagos.jpg}" alt="office2">
+                    </div>
+                    <h5>Lagos</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic incidunt
+                        molestiae non ullam voluptatibus. Animi atque dolorum et hic in quas quia, quod tempora
+                        ut vel Error, et quasi.
+                    </p>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="enter email here"/>
-            </div>
-            <div class="mb-3">
-                <label for="subject" class="form-label">Subject</label>
-                <input type="text" name="subject" class="form-control" id="subject" placeholder="enter subject here"
-                />
-            </div>
-            <div class="mb-3">
-                <label for="comment" class="form-label">Comment</label>
-                <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">Submit</button>
-            </div>
-        </form>
+        </div>
+        <div class="form container col-md-8  mt-4">
+            <form action="#" th:action="@{/contact}" th:Object="${contact}"  method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="enter name here"/>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="enter email here"/>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" name="subject" class="form-control" id="subject" placeholder="enter subject here"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="6"></textarea>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </main>
 

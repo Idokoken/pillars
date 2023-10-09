@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<footer th:fragment="footer" class="p-4">
+<footer th:fragment="footer" class="">
     <div class="content">
         <div class="item">
             <div class="footerItem"><a th:href="@{/}">Home</a></div>
@@ -34,6 +34,8 @@
                 <div class="icon"><i class="fa-brands fa-twitter brand"></i></div>
                 <div class="icon"><i class="fa-brands fa-instagram brand"></i></div>
                 <div class="icon"><i class="fa-brands fa-youtube brand"></i></div>
+                <div class="icon"><i class="fa-brands fa-linkedin-in brand"></i></div>
+                <div class="icon"><i class="fa-brands fa-pinterest brand"></i></div>
             </div>
             <div class="newsletter">
                 <p class="my-2">Subscribe to our NewsLetters</p>

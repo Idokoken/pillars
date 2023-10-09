@@ -25,14 +25,18 @@
 <!--                <img th:src="@{${post.imgCoverUrl}}" alt="cover">-->
 <!--            </div>-->
             <h3 class="m-4 title" th:text="${post.title}">title</h3>
-            <div class="author m-3"> from <h5 class="ms-2" th:text="${post.author}">Author</h5></div>
+            <div class="author m-3">
+                <span>from</span> <h6 class="" th:text="${post.author}">Author</h6>
+            </div>
             <div class="time m-3">
                 <i class="fa-regular fa-calendar me-2"></i>
                 <span th:text="${#temporals.format(post.postDate, 'dd, MMMM yyyy')}"></span>
                 <span class="mx-2">|</span>
                 <span th:text="${#temporals.format(post.postDate, 'hh:mm a')}"></span>
             </div>
-            <p class="m-4 description" th:text="${post.description}">desc</p>
+            <div class="description m-4">
+                <p class="" th:utext="${post.description}">desc</p>
+            </div>
         </div>
         <div class="social-link">
             <a th:href="@{'whatsapp://send?text=' + ${url}}" target="_blank" class="icon">

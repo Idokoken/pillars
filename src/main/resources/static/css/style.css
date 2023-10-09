@@ -1,6 +1,5 @@
 @import "header.css";
 @import "footer.css";
-@import "register.css";
 
 :root{
   --primary-color:  rgba(19, 81, 241, 1);
@@ -38,8 +37,8 @@ main .items .news{
     box-shadow: 5px 5px 5px 5px rgba(219, 224, 240, 1);
 }
 main .items .news h3{
-     font-family: 'Poppins', sans-serif;
-     font-weight: 500;
+     font-family: 'Lora', serif;
+     font-weight: 600;
 }
 main .items .news .time{
      color: var(--primary-color);
@@ -62,12 +61,12 @@ main .items .news .time{
      border-radius: 0 0 20px 20px;
 }
 .home .featured h3{
-     font-family: 'Poppins', sans-serif;
-     font-weight: 600;
+     font-family: 'Lora', serif;
+     font-weight: 700;
 }
 .home .latest .heading{
     margin: 0 auto;
-    color: var(--primary-color);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +76,7 @@ main .items .news .time{
     border-radius: 10px;
     font-weight: 700;
     font-family: 'Tilt Prism', cursive;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(272.67deg, #1351F1 0%, #B410A3 94.16%);
 }
 
 .home .more{
@@ -103,26 +102,38 @@ main .items .news .time{
      object-fit: cover;
 }
 .singlepost .main h3{
-     font-family: 'Poppins', sans-serif;
-     font-weight: 600;
+     font-family: 'Lora', serif;
+     font-weight: 700;
+     text-align: center;
 }
-.singlepost .main p{
-     line-height: 2.0;
+.singlepost .main .description p{
+     line-height: 2.5;
      text-indent: 30px;
+     font-family: 'Noto Serif';
+     font-style: normal;
+
 }
 .singlepost .main .time{
      color: var(--primary-color);
 }
 .singlepost .main .author{
     display: flex;
+    align-items: center;
+}
+.singlepost .main .author h6{
+    margin: 0;
+    margin-left: 10px;
+    font-family: 'Noto Serif';
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.6);
 }
 .singlepost .social-link{
      display: flex;
      margin-bottom: 30px;
 }
 .singlepost .social-link a{
-     width: 35px;
-     height: 35px;
+     width: 40px;
+     height: 40px;
      text-decoration: none;
      margin-right: 20px;
 }
@@ -133,8 +144,8 @@ main .items .news .time{
     height: 100%;
     width: 100%;
     object-fit: contain;
-    border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    border: 2px solid black;
 }
 
 /* all news page */
@@ -152,9 +163,73 @@ main .items .news .time{
 }
 
 /* for Privacy policy page */
+.privacyPolicy h2{
+     font-family: 'Merriweather', serif;
+     font-weight: 700;
+     margin: 30px 0;
+     color: var(--primary-color);
+     text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.75);
+}
 .privacyPolicy div{
     border: 2px solid var(--primary-color);
     border-radius: 20px;
+}
+.privacyPolicy div p{
+    line-height: 2.5;
+}
+
+/* for Contact page */
+.contact{
+    background: #C1B9B9;
+}
+.contact h2{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    margin: 30px 0;
+    color: var(--primary-color);
+    text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.75);
+}
+.contact .locations{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 20px;
+}
+.contact .locations .office{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+.contact .locations .office .img-container{
+    height: 250px;
+    width: 250px;
+}
+.contact .locations .office .img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.contact .form input, .contact .form textarea, .contact .form button {
+     border-radius: 15px;
+     border: 2px solid var(--primary-color);
+}
+/* for about Page */
+.about{
+
+}
+.about h2{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    margin: 30px 0;
+    color: var(--primary-color);
+    text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.75);
+}
+.about h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+.about p{
+     line-height: 2.5;
 }
 
 /* for add Post and Edit Post page  */
@@ -180,4 +255,18 @@ main .items{
 .singlepost .main .img-cover{
      height: 50vh;
 }
+
+/* for Contact page */
+.contact .locations{
+     grid-template-columns: 45% 45%;
+     justify-content: center;
+     place-items: center;
+
+}
+.contact .locations .office .img-container{
+    height: 400px;
+    width: 400px;
+}
+
+
  }
