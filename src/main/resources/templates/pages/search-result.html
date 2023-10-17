@@ -16,7 +16,7 @@
 
 <!--posts section-->
 <main class="allnews">
-    <h3 class="m-4">All News</h3>
+    <h3 class="m-4" th:text="${title}">...</h3>
     <div class="content">
         <div class="items">
             <div class="news p-4" th:if="${posts}" th:each="post : ${posts}">
@@ -37,7 +37,7 @@
                 </li>
                 <li class="page-item" th:if="${posts.hasPrevious()}">
                     <a class="page-link" th:href="@{/post(page=${posts.number - 1})}">
-                       Previous
+                        Previous
                     </a>
                 </li>
                 <li class="page-item"  th:if="${posts.hasNext()}">

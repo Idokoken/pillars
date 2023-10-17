@@ -43,17 +43,18 @@
           </nav>
           <nav class="navbar navbar-light bg-light">
               <div class="container-fluid d-flex justify-content-center">
-                  <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search news" aria-label="Search">
+                  <form class="d-flex" th:action="@{/post/search}" method="get">
+                      <input class="form-control me-2" type="text" placeholder="Search news"
+                             name="keyword" th:value="${keyword}" aria-label="Search">
                       <button class="btn btn-outline-primary" type="submit">Search</button>
                   </form>
               </div>
           </nav>
           <div class="categories">
-              <div class="category active"><a class="nav-link" th:href="@{/post}">All News</a></div>
-              <div class="category"><a class="nav-link" th:href="@{/post}">Entertainment</a></div>
-              <div class="category"><a class="nav-link" th:href="@{/post}">Health</a></div>
-              <div class="category"><a class="nav-link" th:href="@{/post}">Tech</a></div>
+              <div class="category"><a class="nav-link" th:href="@{/post}">All News</a></div>
+              <div class="category"><a class="nav-link" th:href="@{/post/category/entertainment}">Entertainment</a></div>
+              <div class="category"><a class="nav-link" th:href="@{/post/category/politics}">Politics</a></div>
+              <div class="category"><a class="nav-link" th:href="@{/post/category/tech}">Tech</a></div>
           </div>
       </header>
 

@@ -3,6 +3,9 @@ package com.ndgroups.pillars.controller;
 import com.ndgroups.pillars.model.Post;
 import com.ndgroups.pillars.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -25,10 +28,17 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+//    @GetMapping
+//    public String getAllPosts(Model model) {
+//        List<Post> posts =  postService.getAllPost();
+//        model.addAttribute("posts", posts);
+//        return "posts";
+//    }
     @GetMapping
-    public String getAllPosts(Model model) {
-        List<Post> posts =  postService.getAllPost();
-        model.addAttribute("posts", posts);
+    public String getPostsPage(@PageableDefault(size = 5)Pageable pageable, Model model) {
+        Page<Post> posts = postService.getPagePost(pageable);
+         model.addAttribute("posts", posts);
+
         return "posts";
     }
     @GetMapping("/{id}")
@@ -40,12 +50,24 @@ public class PostController {
         return "singlePost";
     }
     @GetMapping("/search")
-    public String getPostByCategory(Model model, @RequestParam(name="criteria", required = true) String criteria, @RequestParam(name="searchItem", required = true) String searchItem){
-        List<Post> posts = postService.findByCriteria(criteria, searchItem);
+    public String getPostByCategory(@RequestParam(defaultValue = "") String keyword,
+                                    @PageableDefault(size = 5) Pageable pageable, Model model){
+        Page<Post> posts = postService.searchPost(keyword, pageable);
         model.addAttribute("posts", posts);
-        return "posts";
+        model.addAttribute("title", "search results");
+        return "pages/search-result";
+    }
+    @GetMapping("/category/{category}")
+    public String getPostCategory(@PathVariable("category") String category, Model model,
+                                  @PageableDefault(size  = 5) Pageable pageable) {
+      Page<Post> posts = postService.getPostByCategory(category, pageable);
+      model.addAttribute("posts", posts);
+
+      return "posts";
     }
 
+
+//    create post
     @GetMapping("/create")
     public String getCreatePost(@ModelAttribute("post") Post post) {
         return "admin/addPost";

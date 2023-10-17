@@ -3,6 +3,9 @@ package com.ndgroups.pillars.controller;
 import com.ndgroups.pillars.model.Post;
 import com.ndgroups.pillars.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,9 +21,10 @@ public class IndexController {
     private PostService postService;
 
     @GetMapping
-    public String getHome(Model model){
-        List<Post> posts = postService.getAllPost();
+    public String getHome(@PageableDefault(size = 6) Pageable pageable, Model model){
+        Page<Post> posts = postService.getPagePost(pageable);
         model.addAttribute("posts", posts);
+
         return "index";
     }
 
@@ -50,12 +54,18 @@ public class IndexController {
     public String getPrivacyPolicy() {
         return  "pages/privacyPolicy";
     }
+//    @GetMapping("/error")
+//    public String getErrorPage() {
+//        return "pages/errorpage";
+//    }
 
     @GetMapping("/admin/pillars")
-    public  String adminPage(Model model) {
-        model.addAttribute("posts", postService.getAllPost());
+    public  String adminPage(@PageableDefault(size = 10) Pageable pageable, Model model) {
+        Page<Post> posts = postService.getPagePost(pageable);
+        model.addAttribute("posts", posts);
         return "admin/adminDashboard";
     }
+
 }
 
 

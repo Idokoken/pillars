@@ -161,6 +161,17 @@ main .items .news .time{
     background: var(--primary-color);
     color: white;
 }
+.allnews nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.allnews .pagination{
+    margin: 40px 0;
+}
+.allnews .pagination li a{
+    text-decoration: none;
+}
 
 /* for Privacy policy page */
 .privacyPolicy h2{
@@ -168,7 +179,7 @@ main .items .news .time{
      font-weight: 700;
      margin: 30px 0;
      color: var(--primary-color);
-     text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.75);
+     text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
 }
 .privacyPolicy div{
     border: 2px solid var(--primary-color);
@@ -180,25 +191,28 @@ main .items .news .time{
 
 /* for Contact page */
 .contact{
-    background: #C1B9B9;
+
 }
 .contact h2{
     font-family: 'Merriweather', serif;
     font-weight: 700;
     margin: 30px 0;
     color: var(--primary-color);
-    text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.75);
+    text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
 }
 .contact .locations{
     display: grid;
     grid-template-columns: 100%;
-    gap: 20px;
+    justify-content: center;
+    grid-gap: 50px;
+    margin: 20px;
 }
 .contact .locations .office{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: white;
+    background: grey;
+    border: 2px solid red;
 }
 .contact .locations .office .img-container{
     height: 250px;
@@ -231,6 +245,20 @@ main .items .news .time{
 .about p{
      line-height: 2.5;
 }
+/*admin Page */
+.adminpage{
+}
+.adminpage nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminpage .pagination{
+    margin: 40px 0;
+}
+.adminpage .pagination li a{
+    text-decoration: none;
+}
 
 /* for add Post and Edit Post page  */
 .addPost input, .addPost textarea, .addPost button{
@@ -258,14 +286,12 @@ main .items{
 
 /* for Contact page */
 .contact .locations{
-     grid-template-columns: 45% 45%;
-     justify-content: center;
-     place-items: center;
-
+     grid-template-columns: 40% 40%;
+     grid-gap: 70px;
 }
 .contact .locations .office .img-container{
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
 }
 
 

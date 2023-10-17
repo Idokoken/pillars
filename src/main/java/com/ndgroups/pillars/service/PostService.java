@@ -8,6 +8,7 @@ import com.ndgroups.pillars.repository.PostRepository;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -109,16 +110,19 @@ public class PostService {
     public Optional<Post> getOnePost(Integer id) {
         return postRepository.findById(id);
     }
-    public List<Post> findByCriteria(String criteria, String searchItem) {
-        if(criteria == "category") {
-            return postRepository.findByCategory(searchItem);
-        }
-        if(criteria == "title") {
-            return postRepository.findByTitle(searchItem);
-        }
-       return new ArrayList<>();
+    public Page<Post> getPagePost(Pageable pageable){
+//        Pageable pageable = PageRequest.of(pageNo, 5);
+        Page<Post> postPages = postRepository.getPagePost(pageable);
+        return postPages;
     }
-
+    public Page<Post> searchPost(String keyword, Pageable pageable) {
+        Page<Post> searchedPost  = postRepository.searchPost(keyword, pageable);
+        return searchedPost;
+    }
+    public Page<Post> getPostByCategory(String category, Pageable pageable) {
+        Page<Post> postCategory = postRepository.findByCategory(category, pageable);
+        return postCategory;
+    }
 
 
 //working with cloudinary
