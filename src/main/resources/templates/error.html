@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" th:href="@{/images/favicon.png}" type="image/x-icon" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>pillars</title>
+</head>
+<body>
+<!--header section-->
+<header th:replace="fragments/header :: header">...</header>
+
+<!--main section-->
+<main class="errorPage">
+        <div class="card">
+            <h3 class="mb-3">Page Not Found</h3>
+            <a th:href="@{/}" class="my-3 btn btn-primary">Go back to home Page</a>
+        </div>
+</main>
+
+
+<!--footer section-->
+<footer th:replace="fragments/footer :: footer">...</footer>
+
+    <!--javascript section-->
+    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/all.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+</body>
+</html>

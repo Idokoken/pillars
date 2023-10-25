@@ -17,16 +17,16 @@
 
 <!--main section-->
 <main>
-        <div class="container adminpage mt-5">
-            <h4 class="text-bold">Admin Page</h4>
+        <div class="container-fluid p-4 adminpage">
+            <h2 class="text-bold">Welcome to the Admin Dashboard</h2>
             <div class=" my-3 bg-secondary">
                 <div class="add">
-                    <a th:href="@{/post/create}" class="btn btn-primary m-2">Add Post</a>
+                    <a th:href="@{/post/create}" class="btn btn-primary my-2">Add Post</a>
                 </div>
 
             </div>
             <div class="postInfo">
-                <h3 class="text-info mt-4 mb-2">News Posts</h3>
+                <h3 class=" my-4">News Posts</h3>
                 <div th:if="${param.success}">
                     <div class="alert alert-success">
                         post updated successfully
@@ -59,7 +59,7 @@
                             ><i class="fa-solid fa-trash-can"></i
                             ></a>
                         </td>
-                        <td >Post Date</td>
+                        <td th:text="${#temporals.format(post.postDate, 'dd, MMM yy')}">Post Date</td>
                     </tr>
 
                     </tbody>

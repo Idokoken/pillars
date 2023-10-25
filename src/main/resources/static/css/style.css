@@ -44,7 +44,33 @@ main .items .news .time{
      color: var(--primary-color);
 }
 
+/* for error page */
+.errorPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/images/error.png");
+    background-size: 100% 100%;
+}
+.errorPage .card{
+    padding: 30px;
+    background: rgba(214, 177, 66, 0.6);
+    border-radius: 0 20px 0 20px;
+}
+.errorPage .card h3{
+   font-family: 'Open Sans', sans-serif;
+   font-width: 700;
+   font-family: italic;
+   font-size: 35px;
+   color: white
+}
+.errorPage .card a{
+   font-family: 'Merienda', cursive;
+   font-size: 24px;
+   border-radius: 20px;
+}
 /* for home page */
+
 .home {
 }
 .home .featured{
@@ -94,6 +120,7 @@ main .items .news .time{
 .singlepost .main .img-cover{
      width: 100%;
      height: 40vh;
+     background: grey;
 }
 .singlepost .main .img-cover img{
      width: 100%;
@@ -108,10 +135,9 @@ main .items .news .time{
 }
 .singlepost .main .description p{
      line-height: 2.5;
-     text-indent: 30px;
      font-family: 'Noto Serif';
      font-style: normal;
-
+     /*text-indent: 30px; */
 }
 .singlepost .main .time{
      color: var(--primary-color);
@@ -177,9 +203,10 @@ main .items .news .time{
 .privacyPolicy h2{
      font-family: 'Merriweather', serif;
      font-weight: 700;
-     margin: 30px 0;
+     font-style: italic;
+     margin: 10px 0 30px 0;
      color: var(--primary-color);
-     text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
+     text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 .privacyPolicy div{
     border: 2px solid var(--primary-color);
@@ -189,16 +216,59 @@ main .items .news .time{
     line-height: 2.5;
 }
 
+/* For Advert page */
+.advert{
+  line-height: 2.5;
+}
+.advert h2{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: italic;
+    margin: 10px 0 30px 0;
+    color: var(--primary-color);
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.advert h3{
+    font-family: 'Merriweather', serif;
+}
+.advert strong{
+   font-weight: 700;
+}
+.editorial{
+    line-height: 2.5;
+}
+.editorial h2{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: italic;
+    margin: 10px 0 30px 0;
+    color: var(--primary-color);
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.editorial .sub-title{
+    font-weight: 700;
+    font-family: 'Merriweather', serif;
+}
+
 /* for Contact page */
 .contact{
-
+  line-height: 2.5;
 }
 .contact h2{
     font-family: 'Merriweather', serif;
     font-weight: 700;
-    margin: 30px 0;
+    font-style: italic;
+    margin:  0 0 30px 0;
     color: var(--primary-color);
-    text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.contact h3{
+    font-family: 'Merriweather', serif;
+
+}
+.contact p{
+    font-size: 18px;
 }
 .contact .locations{
     display: grid;
@@ -207,12 +277,21 @@ main .items .news .time{
     grid-gap: 50px;
     margin: 20px;
 }
+.contact .locations .office h5{
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+.contact .locations .office p{
+    line-height: 2.0;
+}
 .contact .locations .office{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: grey;
-    border: 2px solid red;
+    background: white;
+    padding: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(219, 224, 240, 1), -5px -5px 5px 5px rgba(219, 224, 240, 1);
 }
 .contact .locations .office .img-container{
     height: 250px;
@@ -233,10 +312,11 @@ main .items .news .time{
 }
 .about h2{
     font-family: 'Merriweather', serif;
+    font-style: italic;
     font-weight: 700;
-    margin: 30px 0;
+    margin: 10px 0 30px 0;
     color: var(--primary-color);
-    text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.75);
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 .about h3 {
     font-family: 'Merriweather', serif;
@@ -247,6 +327,31 @@ main .items .news .time{
 }
 /*admin Page */
 .adminpage{
+}
+.adminpage h2{
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-weight: 700;
+    margin: 10px 0 30px 0;
+    color: var(--primary-color);
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.adminpage h3{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+.adminpage table{
+   font-size: 12px;
+}
+.adminpage table a{
+   height: 25px;
+   width: 25px;
+   padding: 0;
+}
+.adminpage table img{
+   height: 30px;
+   width: 30px;
+   padding: 0;
 }
 .adminpage nav{
     display: flex;
@@ -290,9 +395,25 @@ main .items{
      grid-gap: 70px;
 }
 .contact .locations .office .img-container{
-    height: 350px;
-    width: 350px;
+    height: 300px;
+    width: 300px;
+    max-height: 350px;
+    max-width: 350px;
 }
 
+/* for admin Page */
+.adminpage table{
+   font-size: 16px;
+}
+.adminpage table a{
+   height: 40px;
+   width: 40px;
+   padding: 0;
+}
+.adminpage table img{
+   height: 40px;
+   width: 40px;
+   padding: 0;
+}
 
  }

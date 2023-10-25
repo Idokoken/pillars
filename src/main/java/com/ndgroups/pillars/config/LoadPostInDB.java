@@ -29,7 +29,7 @@ public class LoadPostInDB implements CommandLineRunner {
                 "      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n" +
                 "      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n" +
                 "      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse", "Ken Idoko",
-                "img cover", false);
+                "img cover", true);
         Post post2 = new Post("Post title 2", "Politics","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n" +
                 "      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n" +
                 "      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n" +
@@ -62,7 +62,7 @@ public class LoadPostInDB implements CommandLineRunner {
                 "      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n" +
                 "      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n" +
                 "      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse", "Ken Idoko",
-                "img cover", false);
+                "img cover", true);
         Post post5 = new Post("Post title 5", "entertainment","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n" +
                 "      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n" +
                 "      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n" +
@@ -156,7 +156,7 @@ public class LoadPostInDB implements CommandLineRunner {
                 post11, post12);
         postList = postList.stream().collect(Collectors.toList());
 
-        postRepository.saveAll(postList);
+//        postRepository.saveAll(postList);
 
     }
 }

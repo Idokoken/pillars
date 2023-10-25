@@ -7,6 +7,8 @@ import com.ndgroups.pillars.model.Post;
 import com.ndgroups.pillars.repository.PostRepository;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -35,27 +37,30 @@ public class PostService {
                            Boolean isFeatured) {
         Post post  = new Post();
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-
-//        convert image file file base64 string
+        try {
+ //           convert image file file base64 string
 //        byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
 //        String encodedString = Base64.getEncoder().encodeToString(fileContent);
 //        convert base64 string to image file
-        if (fileName.contains("..")){
-            System.out.println("not a valid file");
-        }
-        try {
-            post.setImgCoverUrl(Base64.getEncoder().encodeToString(file.getBytes()));
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-        post.setTitle(title);
-        post.setCategory(category);
-        post.setDescription(description);
-        post.setAuthor(author);
-        post.setIsFeatured(isFeatured);
+            if (fileName.contains("..")){
+                System.out.println("not a valid file");
+            }
+            try {
+                post.setImgCoverUrl(Base64.getEncoder().encodeToString(file.getBytes()));
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+            post.setTitle(title);
+            post.setCategory(category);
+            post.setDescription(description);
+            post.setAuthor(author);
+            post.setIsFeatured(isFeatured);
 
-       Post newPost = postRepository.save(post);
-        return newPost;
+            Post newPost = postRepository.save(post);
+            return newPost;
+        } catch (DataIntegrityViolationException e) {
+            throw new DuplicateKeyException("a duplicate entry was found for the unique key");
+        }
     }
 
     public Post updatePost(Integer id, MultipartFile file, String title, String category, String description, String author,
@@ -110,7 +115,7 @@ public class PostService {
     public Optional<Post> getOnePost(Integer id) {
         return postRepository.findById(id);
     }
-    public Page<Post> getPagePost(Pageable pageable){
+    public Page<Post> getPostPage(Pageable pageable){
 //        Pageable pageable = PageRequest.of(pageNo, 5);
         Page<Post> postPages = postRepository.getPagePost(pageable);
         return postPages;
@@ -122,6 +127,16 @@ public class PostService {
     public Page<Post> getPostByCategory(String category, Pageable pageable) {
         Page<Post> postCategory = postRepository.findByCategory(category, pageable);
         return postCategory;
+    }
+    public List<Post> getFeaturedPost( int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        List<Post> featuredPost = postRepository.findByIsFeaturedTrueOrderByPostDateDesc(pageable);
+        return featuredPost;
+    }
+    public List<Post> getLatestPost(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        List<Post> latestPost = postRepository.findByIsFeaturedFalseOrderByPostDateDesc(pageable);
+        return latestPost;
     }
 
 

@@ -18,12 +18,12 @@
 <main>
     <div class="contact container-fluid p-4">
         <h2>Contact Us</h2>
-        <div class="address">
+        <div class="address mb-3">
             <h3>Our Office Locations</h3>
-            <p>Our mission is to provide
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic incidunt
-                molestiae non ullam voluptatibus. Animi atque dolorum et hic in quas quia, quod tempora
-                ut vel Error, et quasi.
+            <p>
+                Our mission is to  provide the good people of Nigeria with good and educative news and articles
+                and also to produce quality, vibrant and viable news that wills inform and form the
+                nation’s present and aspiring political, business, economic and cultural leadership.
             </p>
             <div class="locations">
                 <div class="office">
@@ -33,12 +33,12 @@
                     <h5>Abuja</h5>
                     <p>Suite 10D, Achi Street opposite blue Mosque, Utako
                      </p>
-                    <p>Federal Capital Teratary </p>
+                    <p>Federal Capital Territory </p>
                     <p>+2348078687412</p>
                 </div>
                 <div class="office">
                     <div class="img-container">
-                        <img th:src="@{/images/lagos.png}" alt="office2">
+                        <img th:src="@{/images/lagos.png}" alt="office2good">
                     </div>
                     <h5>Lagos</h5>
                     <p>Suite 14C Infinity Plaza, No 9 Ado Street
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="form container col-md-8  mt-4">
+        <div class="form container col-md-8  mt-5">
             <form action="#" th:action="@{/contact}" th:Object="${contact}"  method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>

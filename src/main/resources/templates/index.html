@@ -16,16 +16,22 @@
 
 <!--main section-->
     <main class="home">
-        <div class="featured">
-            <div class="img-cover">
-                <img src="/images/dummy.jpg" alt="cover">
-            </div>
-            <div class="title m-4">
-                <a href="">
-                    <h3 class="">Senate President: Kanu is the right man for the job</h3>
-                    <div class="time py-3"><i class="fa-regular fa-clock me-2"></i>4 Hours ago</div>
-                </a>
-            </div>
+        <div class="featured" th:if="${featuredPosts}" th:each="featuredPost : ${featuredPosts}">
+            <a th:href="@{'/post/' + ${featuredPost.postId}}">
+                <div class="img-cover">
+<!--                    <img src="/images/dummy.jpg" alt="cover">-->
+                    <img th:src="*{'data:image/jpeg;base64,' + {featuredPost.imgCoverUrl}}" alt="cover">
+                </div>
+                <div class="title m-4">
+                    <a th:href="@{'/post/' + ${featuredPost.postId}}">
+                        <h3 class="" th:text="${featuredPost.title}">title</h3>
+                        <div class="time py-3">
+                            <i class="fa-regular fa-clock me-2"></i>
+                            <span th:text="${#temporals.format(featuredPost.postDate, 'hh:mm a')}" class="me-2">time</span>ago
+                        </div>
+                    </a>
+                </div>
+            </a>
          </div>
         <div class="content p-4">
         <div class="latest">

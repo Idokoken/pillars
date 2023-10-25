@@ -22,11 +22,17 @@
                 <div  th:if="${message}">
                     <p th:text="${message}" class="alert alert-success text-center"></p>
                 </div>
+                <div class="alert alert-danger" th:if="${errorMessage}">
+                    <p th:text="${errorMessage}"></p>
+                </div>
+                <div class="alert alert-danger" th:if="${inputError}">
+                    <p th:text="${inputError}"></p>
+                </div>
                 <form action="#" th:action="@{/post/create}" method="post"
                       enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label class="mb-1" for="title">Title</label>
-<!--                        <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-danger"></p>-->
+<!--                        <p th:if="${title.hasErrors('title')}" th:errors="${title}" class="text-danger"></p>-->
                         <input
                                 type="text"
                                 name="title"

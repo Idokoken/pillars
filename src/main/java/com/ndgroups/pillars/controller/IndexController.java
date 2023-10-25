@@ -21,10 +21,11 @@ public class IndexController {
     private PostService postService;
 
     @GetMapping
-    public String getHome(@PageableDefault(size = 6) Pageable pageable, Model model){
-        Page<Post> posts = postService.getPagePost(pageable);
+    public String getHome(Model model){
+        List<Post> posts = postService.getLatestPost(0, 6);
+        List<Post>featuredPosts  = postService.getFeaturedPost(0, 2);
         model.addAttribute("posts", posts);
-
+        model.addAttribute("featuredPosts", featuredPosts);
         return "index";
     }
 
@@ -56,12 +57,12 @@ public class IndexController {
     }
 //    @GetMapping("/error")
 //    public String getErrorPage() {
-//        return "pages/errorpage";
+//        return "error";
 //    }
 
     @GetMapping("/admin/pillars")
     public  String adminPage(@PageableDefault(size = 10) Pageable pageable, Model model) {
-        Page<Post> posts = postService.getPagePost(pageable);
+        Page<Post> posts = postService.getPostPage(pageable);
         model.addAttribute("posts", posts);
         return "admin/adminDashboard";
     }
