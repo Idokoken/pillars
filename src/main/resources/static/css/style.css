@@ -366,7 +366,7 @@ main .items .news .time{
 }
 
 /* for add Post and Edit Post page  */
-.addPost input, .addPost textarea, .addPost button{
+.addPost input, .addPost textarea, .addPost button, .addPost select{
     border-radius: 0 30px 30px 0;
 }
 

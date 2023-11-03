@@ -18,12 +18,12 @@
 <main>
     <div class="container-fluid singlepost">
         <div class="main">
-            <div class="img-cover">
-                <img th:src="*{'data:image/jpeg;base64,' + {post.imgCoverUrl}}" alt="cover">
-            </div>
 <!--            <div class="img-cover">-->
-<!--                <img th:src="@{${post.imgCoverUrl}}" alt="cover">-->
+<!--                <img th:src="*{'data:image/jpeg;base64,' + {post.imgCoverUrl}}" alt="cover">-->
 <!--            </div>-->
+            <div class="img-cover">
+                <img th:src="@{${post.imgCoverUrl}}" alt="cover">
+            </div>
             <h3 class="m-4 title" th:text="${post.title}">title</h3>
             <div class="author m-3">
                 <span>from</span> <h6 class="" th:text="${post.author}">Author</h6>

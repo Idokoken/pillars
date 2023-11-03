@@ -82,14 +82,11 @@
                 </div>
                 <div class="form-group mb-3">
                     <label class="mb-1" for="isFeatured">isFeatured</label>
-                    <input
-                            type="text"
-                            name="isFeatured"
-                            th:field="*{isFeatured}"
-                            id="isFeatured"
-                            placeholder="author"
-                            class="form-control"
-                    />
+                    <select id="isFeatured" name="isFeatured" class="form-select" aria-label="Default select example">
+                        <option value="false" th:selected="*{isFeatured} == false">False</option>
+                        <option value="true" th:selected="*{isFeatured} == true">True</option>
+
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-info text-light mt-3">Submit</button>
             </form>

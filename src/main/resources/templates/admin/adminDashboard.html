@@ -46,8 +46,8 @@
                     <tbody>
                     <tr th:each="post : ${posts}">
                         <td th:text="${post.postId}">post id</td>
-<!--                        <th scope="row"><img th:src="@{${post.imgCoverUrl}}" alt="cover"></th>-->
-                        <th scope="row"><img th:src="*{'data:image/jpeg;base64,' + {post.imgCoverUrl}}" alt="cover"></th>
+                        <th scope="row"><img th:src="@{${post.imgCoverUrl}}" alt="cover"></th>
+<!--                        <th scope="row"><img th:src="*{'data:image/jpeg;base64,' + {post.imgCoverUrl}}" alt="cover"></th>-->
                         <td colspan="2" th:text="${post.title}">post title</td>
                         <td>
                             <a class="btn btn-secondary" th:href="@{/post/edit/{edit}(edit=${post.postId})}"

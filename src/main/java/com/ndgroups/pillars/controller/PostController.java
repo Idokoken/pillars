@@ -26,7 +26,6 @@ public class PostController {
     public String getPostsPage(@PageableDefault(size = 5)Pageable pageable, Model model) {
         Page<Post> posts = postService.getPostPage(pageable);
          model.addAttribute("posts", posts);
-
         return "posts";
     }
     @GetMapping("/{id}")

@@ -19,15 +19,15 @@
         <div class="featured" th:if="${featuredPosts}" th:each="featuredPost : ${featuredPosts}">
             <a th:href="@{'/post/' + ${featuredPost.postId}}">
                 <div class="img-cover">
-<!--                    <img src="/images/dummy.jpg" alt="cover">-->
-                    <img th:src="*{'data:image/jpeg;base64,' + {featuredPost.imgCoverUrl}}" alt="cover">
+                    <img th:src="@{${featuredPost.imgCoverUrl}}" alt="cover">
+<!--                    <img th:src="*{'data:image/jpeg;base64,' + {featuredPost.imgCoverUrl}}" alt="cover">-->
                 </div>
                 <div class="title m-4">
                     <a th:href="@{'/post/' + ${featuredPost.postId}}">
                         <h3 class="" th:text="${featuredPost.title}">title</h3>
                         <div class="time py-3">
                             <i class="fa-regular fa-clock me-2"></i>
-                            <span th:text="${#temporals.format(featuredPost.postDate, 'hh:mm a')}" class="me-2">time</span>ago
+                            <span th:text="${#temporals.format(featuredPost.postDate, 'dd, MMM yy')}" class="me-2">time</span>
                         </div>
                     </a>
                 </div>
@@ -42,11 +42,6 @@
                         <h3 class="" th:text="${post.title}">...</h3>
                         <div class="time py-3">
                             <i class="fa-regular fa-clock me-2"></i>
-<!--                            <span th:text="${#numbers.formatInteger(-->
-<!--                                 #temporals.format(post.postDate, 'mm')) < 60 ?-->
-<!--                                 #temporals.format(post.postDate, 'mm') + ' minutes ago' :-->
-<!--                                 #temporals.format(post.postDate, 'dd, MMM yyyy hh:mm a')}">-->
-<!--                         </span>-->
                             <span th:text="${#temporals.format(post.postDate, 'hh:mm a - dd, MMM')}"></span>
                         </div>
                     </a>
