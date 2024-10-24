@@ -8,6 +8,6 @@ FROM amazoncorretto:17
 
 EXPOSE 8080
 
-COPY --from=build /target/pillars.jar pillars.jar
+COPY --from=build /target/pillars-0.0.1-SNAPSHOT.jar pillars.jar
 
 ENTRYPOINT ["java", "-jar", "pillars.jar"]
