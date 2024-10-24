@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport"
+                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>pillars</title>
+      </head>
+      <body>
+      <header th:fragment="header" class="sticky-top">
+          <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+              <div class="container-fluid">
+                  <a class="navbar-brand" th:href="@{/}">
+                      <img th:src="@{/images/brand.png}"  alt="pillars brand" width="30" height="30" class="d-inline-block align-text-top">
+                      pillars
+                  </a>
+                  <button
+                          class="navbar-toggler"
+                          type="button"
+                          data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                          aria-controls="navbarTogglerDemo02"
+                          aria-expanded="false"
+                          aria-label="Toggle navigation"
+                  >
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/}">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/editorial}">Editorial</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" th:href="@{/advert}">Advertise With Us</a>
+                          </li>
+                      </ul>
+
+                  </div>
+              </div>
+          </nav>
+          <nav class="navbar navbar-light bg-light">
+              <div class="container-fluid d-flex justify-content-center">
+                  <form class="d-flex" th:action="@{/post/search}" method="get">
+                      <input class="form-control me-2" type="text" placeholder="Search news"
+                             name="keyword" th:value="${keyword}" aria-label="Search">
+                      <button class="btn btn-outline-primary" type="submit">Search</button>
+                  </form>
+              </div>
+          </nav>
+          <div class="categories">
+              <div class="category"><a class="nav-link" th:href="@{/post}">All News</a></div>
+              <div class="category"><a class="nav-link" th:href="@{/post/category/entertainment}">Entertainment</a></div>
+              <div class="category"><a class="nav-link" th:href="@{/post/category/politics}">Politics</a></div>
+              <div class="category"><a class="nav-link" th:href="@{/post/category/tech}">Tech</a></div>
+          </div>
+      </header>
+
+      </body>
+</html>

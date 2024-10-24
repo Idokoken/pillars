@@ -14,7 +14,8 @@ The following technologies were used in developing the website includes
 2. Spring Framework
 3. CSS
 4. Bootstrap Framework
-5. some external packages or dependencies like thymeleaf(html template engine), Spring Web, Spring Data JPA, Spring Security etc
+5. MySQL database
+6. some external packages or dependencies like thymeleaf(html template engine), Spring Web, Spring Data JPA, Spring Security etc
 
   
    
