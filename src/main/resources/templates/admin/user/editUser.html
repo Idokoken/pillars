@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" th:href="@{/images/favicon.png}" type="image/x-icon" />
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/fontawesome.css}">
+  <link rel="stylesheet" th:href="@{/css/brands.css}">
+  <link rel="stylesheet" th:href="@{/css/solid.css}">
+  <link rel="stylesheet" th:href="@{/css/regular.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <title>ahom</title>
+</head>
+<body>
+<header th:replace="fragments/header :: header">...</header>
+
+<!--main section-->
+<main>
+  <div class="container-fluid py-4 my-0">
+    <div class="container">
+      <h1 class="">Edit User</h1>
+      <form action="#" th:action="@{/user/update}" method="post" th:object="${user}">
+        <div class="form-group mb-3">
+          <label class="mb-1" for="name">Name</label>
+          <input
+                  type="text"
+                  th:field="*{name}"
+                  name="name"
+                  id="name"
+                  placeholder="name"
+                  class="form-control"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="mb-1" for="email">Email</label>
+          <input
+                  type="email"
+                  name="email"
+                  th:field="*{email}"
+                  id="email"
+                  placeholder="email"
+                  class="form-control"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="mb-1" for="password">Password</label>
+          <input
+                  type="password"
+                  name="password"
+                  th:field="*{password}"
+                  id="password"
+                  placeholder="password"
+                  class="form-control"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-info text-light mt-3">Submit</button>
+      </form>
+      <a th:href="@{/admin}" class="btn btn-danger mt-4">Close</a>
+    </div>
+
+  </div>
+</main>
+
+<!--footer section-->
+<footer th:replace="fragments/footer :: footer">...</footer>
+
+<!--javascript section-->
+<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/solid.js}"></script>
+<script type="text/javascript" th:src="@{/js/brands.js}"></script>
+<script type="text/javascript" th:src="@{/js/regular.js}"></script>
+<script type="text/javascript" th:src="@{/js/fontawesome.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+</body>
+</html>

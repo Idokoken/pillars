@@ -1,7 +1,7 @@
 package com.ndgroups.pillars.controller;
 
 import com.ndgroups.pillars.model.Post;
-import com.ndgroups.pillars.service.PostService;
+import com.ndgroups.pillars.service.impl.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.domain.Page;

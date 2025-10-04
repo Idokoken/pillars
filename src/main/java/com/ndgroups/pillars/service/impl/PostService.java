@@ -1,4 +1,4 @@
-package com.ndgroups.pillars.service;
+package com.ndgroups.pillars.service.impl;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
